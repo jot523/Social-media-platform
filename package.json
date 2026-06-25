@@ -1,0 +1,15 @@
+{
+  "name": "connecto-fullstack",
+  "version": "1.0.0",
+  "description": "Connecto Social Media Platform - Full Stack",
+  "scripts": {
+    "install:server": "cd server && npm install",
+    "install:client": "cd connecto && npm install",
+    "build:client": "cd connecto && npm run build",
+    "build": "npm run install:server && npm run install:client && npm run build:client",
+    "start": "cd server && node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

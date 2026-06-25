@@ -39,6 +39,8 @@ if (!fs.existsSync(uploadDir)) {
 app.use('/uploads', express.static(uploadDir));
 
 
+
+
 // Routes — MVC controller-backed routes
 app.use('/api/auth',          require('./routes/auth.routes'));
 app.use('/api/posts',         require('./routes/posts.routes'));
@@ -52,6 +54,27 @@ app.use('/api/mood',          require('./routes/mood'));
 app.use('/api/explore',       require('./routes/explore'));
 app.use('/api/calls',         require('./routes/calls.routes'));
 app.use('/api/songs',         require('./routes/songs.routes'));
+
+// Serve React frontend build in production
+const clientBuildPath = path.join(__dirname, '..', 'connecto', 'build');
+if (fs.existsSync(clientBuildPath)) {
+  app.use(express.static(clientBuildPath));
+
+  // Catch-all: serve index.html for any non-API route (React Router)
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+  console.log('[Server] Serving React build from:', clientBuildPath);
+} else {
+  // Fallback when no build exists (dev mode)
+  app.get('/', (req, res) => {
+    res.json({
+      status: 'ok',
+      message: 'Connecto API is running. Frontend build not found — run "npm run build" in /connecto.',
+      version: '1.0.0'
+    });
+  });
+}
 
 
 // Socket.io for Real-time features
