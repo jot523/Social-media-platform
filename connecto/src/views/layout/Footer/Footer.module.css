@@ -1,0 +1,79 @@
+/* Footer Styles */
+
+.footer {
+  background: var(--neo-surface);
+  box-shadow: var(--neo-shadow-light);
+  padding: var(--space-lg) var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-base);
+  font-weight: var(--font-extrabold);
+}
+
+.logoText {
+  font-size: var(--font-base);
+  font-weight: var(--font-extrabold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footerCopy {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.footerLinks {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.footerLink {
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+[data-theme="dark"] .footer {
+  background: var(--neo-surface-dark);
+  box-shadow: var(--neo-shadow-dark);
+}

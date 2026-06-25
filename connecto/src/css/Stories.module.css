@@ -1,0 +1,347 @@
+/* ===== CONNECTO - Neomorphism Stories ===== */
+
+.storiesWrapper {
+  background: var(--neo-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--neo-shadow-light);
+  padding: 16px 20px;
+  overflow: hidden;
+}
+
+.storiesContainer {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.storiesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add Story Button */
+.addStory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.addStoryCircle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--neo-bg);
+  box-shadow: var(--neo-shadow-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+.addStoryCircle:hover {
+  box-shadow: var(--neo-shadow-sm);
+  transform: scale(1.05);
+}
+
+.addStoryCircle::after {
+  content: '+';
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  border: 2px solid var(--neo-bg);
+  line-height: 18px;
+  text-align: center;
+}
+
+.addStoryAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.addStoryIcon {
+  font-size: 24px;
+  color: var(--primary);
+}
+
+/* Story Item */
+.storyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.storyRing {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--gradient-story);
+  box-shadow: 4px 4px 10px rgba(240, 147, 251, 0.3);
+  transition: var(--transition);
+}
+
+.storyRing:hover {
+  transform: scale(1.08);
+  box-shadow: 6px 6px 15px rgba(240, 147, 251, 0.4);
+}
+
+.storyRingViewed {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--neo-bg);
+  box-shadow: var(--neo-shadow-light);
+  transition: var(--transition);
+}
+
+.storyRingViewed:hover {
+  transform: scale(1.05);
+}
+
+.storyAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--neo-bg);
+}
+
+.storyName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 68px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Story Viewer Modal */
+.storyModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.storyViewer {
+  position: relative;
+  width: 400px;
+  max-width: 95vw;
+  height: 700px;
+  max-height: 90vh;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  background: #000;
+}
+
+.storyProgress {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+}
+
+.storyProgressBar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.storyProgressFill {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.storyViewerHeader {
+  position: absolute;
+  top: 24px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.storyViewerUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.storyViewerAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.storyViewerName {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.storyViewerTime {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+}
+
+.storyCloseBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: var(--transition-fast);
+}
+
+.storyCloseBtn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.storyMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyCaption {
+  position: absolute;
+  bottom: 120px;
+  left: 16px;
+  right: 16px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.storyNavBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.storyNavBtn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.storyNavPrev {
+  left: 12px;
+}
+
+.storyNavNext {
+  right: 12px;
+}
+
+/* Story Feedback Area */
+.storyFeedbackArea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 15;
+}
+
+.quickReactions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.reactionBtn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reactionBtn:hover {
+  transform: scale(1.3) translateY(-4px);
+}
+
+.replyInputBox {
+  display: flex;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 8px 16px;
+  backdrop-filter: blur(10px);
+}
+
+.replyInput {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.replyInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}

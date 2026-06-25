@@ -1,0 +1,14 @@
+/* Light Theme — default, matches :root in globals.css */
+[data-theme="light"] {
+  --neo-bg:               #e8edf2;
+  --neo-surface:          #e8edf2;
+  --neo-surface-elevated: #f0f4f8;
+  --neo-shadow-light:     6px 6px 12px #c5cad4, -6px -6px 12px #ffffff;
+  --neo-shadow-inset:     inset 4px 4px 8px #c5cad4, inset -4px -4px 8px #ffffff;
+  --neo-shadow-sm:        3px 3px 6px #c5cad4, -3px -3px 6px #ffffff;
+  --neo-shadow-lg:        10px 10px 20px #c5cad4, -10px -10px 20px #ffffff;
+  --neo-shadow-xl:        15px 15px 30px #c5cad4, -15px -15px 30px #ffffff;
+  --text-primary:         #2d3748;
+  --text-secondary:       #718096;
+  --text-muted:           #a0aec0;
+}

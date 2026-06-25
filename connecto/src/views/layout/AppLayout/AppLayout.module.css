@@ -1,0 +1,21 @@
+/* AppLayout Styles */
+
+.appLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--neo-bg);
+}
+
+.mainContent {
+  flex: 1;
+  padding-top: 96px; /* Account for floating glass navbar */
+  min-height: calc(100vh - 96px);
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+  }
+}

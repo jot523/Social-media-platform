@@ -1,0 +1,14 @@
+/* Dark Theme */
+[data-theme="dark"] {
+  --neo-bg:               #1a1f2e;
+  --neo-surface:          #222736;
+  --neo-surface-elevated: #2a2f3e;
+  --neo-shadow-light:     6px 6px 12px #141824, -6px -6px 12px #303650;
+  --neo-shadow-inset:     inset 4px 4px 8px #141824, inset -4px -4px 8px #303650;
+  --neo-shadow-sm:        3px 3px 6px #141824, -3px -3px 6px #303650;
+  --neo-shadow-lg:        10px 10px 20px #141824, -10px -10px 20px #303650;
+  --neo-shadow-xl:        15px 15px 30px #141824, -15px -15px 30px #303650;
+  --text-primary:         #f7fafc;
+  --text-secondary:       #cbd5e0;
+  --text-muted:           #718096;
+}

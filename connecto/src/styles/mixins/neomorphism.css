@@ -1,0 +1,399 @@
+/* ===== NEOMORPHISM MIXINS & UTILITIES ===== */
+
+/* ===== NEOMORPHISM CARD STYLES ===== */
+.neo-card {
+  background: var(--neo-surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--neo-shadow-light);
+  transition: all var(--transition-smooth);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neo-shadow-lg);
+}
+
+.neo-card--elevated {
+  background: var(--neo-surface-elevated);
+  box-shadow: var(--neo-shadow-lg);
+}
+
+.neo-card--inset {
+  box-shadow: var(--neo-shadow-inset);
+}
+
+.neo-card--flat {
+  box-shadow: var(--neo-shadow-sm);
+}
+
+/* ===== NEOMORPHISM BUTTON STYLES ===== */
+.neo-btn {
+  background: var(--neo-surface);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--neo-shadow-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: var(--font-sm);
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--neo-shadow-light);
+}
+
+.neo-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--neo-shadow-inset);
+}
+
+.neo-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--neo-shadow-sm);
+}
+
+/* Button Variants */
+.neo-btn--primary {
+  background: var(--gradient-primary);
+  color: var(--text-white);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+.neo-btn--primary:hover {
+  box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
+}
+
+.neo-btn--secondary {
+  background: var(--gradient-secondary);
+  color: var(--text-white);
+  box-shadow: 0 4px 12px rgba(var(--secondary-rgb), 0.3);
+}
+
+.neo-btn--accent {
+  background: var(--gradient-accent);
+  color: var(--text-white);
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+}
+
+.neo-btn--ghost {
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-secondary);
+}
+
+.neo-btn--ghost:hover {
+  background: var(--neo-surface);
+  box-shadow: var(--neo-shadow-sm);
+  color: var(--text-primary);
+}
+
+/* Button Sizes */
+.neo-btn--sm {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-xs);
+  border-radius: var(--border-radius-xs);
+}
+
+.neo-btn--lg {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--font-lg);
+  border-radius: var(--border-radius);
+}
+
+.neo-btn--xl {
+  padding: var(--space-lg) var(--space-xl);
+  font-size: var(--font-xl);
+  border-radius: var(--border-radius-lg);
+}
+
+.neo-btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--border-radius-full);
+}
+
+/* ===== NEOMORPHISM INPUT STYLES ===== */
+.neo-input {
+  background: var(--neo-surface);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--neo-shadow-inset);
+  padding: var(--space-sm) var(--space-md);
+  font-family: inherit;
+  font-size: var(--font-base);
+  color: var(--text-primary);
+  width: 100%;
+  transition: all var(--transition-smooth);
+  outline: none;
+}
+
+.neo-input:focus {
+  box-shadow: var(--neo-shadow-inset), 0 0 0 2px rgba(var(--primary-rgb), 0.2);
+}
+
+.neo-input::placeholder {
+  color: var(--text-muted);
+}
+
+.neo-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== NEOMORPHISM AVATAR STYLES ===== */
+.neo-avatar {
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--neo-shadow-sm);
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-avatar:hover {
+  box-shadow: var(--neo-shadow-light);
+  transform: scale(1.05);
+}
+
+.neo-avatar--sm {
+  width: 32px;
+  height: 32px;
+}
+
+.neo-avatar--md {
+  width: 48px;
+  height: 48px;
+}
+
+.neo-avatar--lg {
+  width: 64px;
+  height: 64px;
+}
+
+.neo-avatar--xl {
+  width: 96px;
+  height: 96px;
+}
+
+.neo-avatar--2xl {
+  width: 128px;
+  height: 128px;
+}
+
+/* ===== NEOMORPHISM BADGE STYLES ===== */
+.neo-badge {
+  background: var(--neo-surface);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--neo-shadow-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.neo-badge--primary {
+  background: var(--gradient-primary);
+  color: var(--text-white);
+}
+
+.neo-badge--success {
+  background: var(--success);
+  color: var(--text-white);
+}
+
+.neo-badge--warning {
+  background: var(--warning);
+  color: var(--text-black);
+}
+
+.neo-badge--danger {
+  background: var(--danger);
+  color: var(--text-white);
+}
+
+/* ===== NEOMORPHISM PROGRESS BAR ===== */
+.neo-progress {
+  background: var(--neo-surface);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--neo-shadow-inset);
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.neo-progress__bar {
+  background: var(--gradient-primary);
+  height: 100%;
+  border-radius: var(--border-radius-full);
+  transition: width var(--transition-smooth);
+  position: relative;
+}
+
+.neo-progress__bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* ===== NEOMORPHISM TOGGLE SWITCH ===== */
+.neo-toggle {
+  width: 48px;
+  height: 24px;
+  background: var(--neo-surface);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--neo-shadow-inset);
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.neo-toggle__thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--neo-surface);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--neo-shadow-sm);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all var(--transition-smooth);
+}
+
+.neo-toggle--active {
+  background: var(--gradient-primary);
+}
+
+.neo-toggle--active .neo-toggle__thumb {
+  transform: translateX(24px);
+  background: var(--text-white);
+}
+
+/* ===== NEOMORPHISM DROPDOWN ===== */
+.neo-dropdown {
+  background: var(--neo-surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--neo-shadow-lg);
+  padding: var(--space-sm);
+  min-width: 200px;
+  position: absolute;
+  z-index: var(--z-dropdown);
+  animation: dropdownSlide 200ms ease-out;
+}
+
+.neo-dropdown__item {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+  text-decoration: none;
+  display: block;
+}
+
+.neo-dropdown__item:hover {
+  background: var(--neo-surface-elevated);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+  40%, 43% { transform: translateY(-8px); }
+  70% { transform: translateY(-4px); }
+  90% { transform: translateY(-2px); }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.neo-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.neo-gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.neo-shadow-hover:hover {
+  box-shadow: var(--neo-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.neo-clickable {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.neo-clickable:hover {
+  transform: translateY(-1px);
+}
+
+.neo-clickable:active {
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE NEOMORPHISM ===== */
+@media (max-width: 768px) {
+  .neo-card {
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--neo-shadow-sm);
+  }
+  
+  .neo-btn {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-xs);
+  }
+  
+  .neo-dropdown {
+    min-width: 160px;
+  }
+}
