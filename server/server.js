@@ -11,10 +11,19 @@ connectDB();
 
 const app = express();
 const server = http.createServer(app);
+
+// Allowed origins for CORS (Vercel frontend + local dev)
+const allowedOrigins = [
+  'https://social-media-platform-three-xi.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:5000'
+];
+
 const io = new Server(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
   }
 });
 
@@ -28,7 +37,10 @@ app.use((req, res, next) => {
   });
   next();
 });
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 const fs = require('fs');
