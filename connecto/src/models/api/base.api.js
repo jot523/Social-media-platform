@@ -14,7 +14,8 @@ class APIError extends Error {
 
 class BaseAPI {
   constructor(baseURL = '') {
-    this.baseURL = baseURL;
+    const apiServer = process.env.REACT_APP_API_URL || '';
+    this.baseURL = apiServer + baseURL;
     this.defaultHeaders = {
       'Content-Type': 'application/json',
     };

@@ -14,9 +14,9 @@ export const useSocket = () => {
   useEffect(() => {
     if (!user) return;
 
-    const url = window.location.origin.includes('localhost')
+    const url = process.env.REACT_APP_API_URL || (window.location.origin.includes('localhost')
       ? 'http://localhost:5000'
-      : '/';
+      : window.location.origin);
 
     socket.current = io(url, { transports: ['websocket', 'polling'] });
 

@@ -20,7 +20,7 @@ export const getImageUrl = (url) => {
   const formattedUrl = url.startsWith('/') ? url : `/${url}`;
   
   // Dev proxy/port fallback
-  const baseUrl = window.location.origin.includes('localhost') ? 'http://localhost:5000' : '';
+  const baseUrl = process.env.REACT_APP_API_URL || (window.location.origin.includes('localhost') ? 'http://localhost:5000' : '');
   
   return `${baseUrl}${formattedUrl}`;
 };

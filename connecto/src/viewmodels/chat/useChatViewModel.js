@@ -116,9 +116,9 @@ export const useChatViewModel = () => {
   useEffect(() => {
     if (!user) return;
 
-    const socketUrl = window.location.origin.includes('localhost')
+    const socketUrl = process.env.REACT_APP_API_URL || (window.location.origin.includes('localhost')
       ? 'http://localhost:5000'
-      : '/';
+      : window.location.origin);
 
     socket.current = io(socketUrl, { transports: ['websocket', 'polling'] });
 

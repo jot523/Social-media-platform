@@ -14,9 +14,9 @@ class SocketService {
   connect(user) {
     if (this.socket?.connected) return this.socket;
 
-    const url = window.location.origin.includes('localhost')
+    const url = process.env.REACT_APP_API_URL || (window.location.origin.includes('localhost')
       ? 'http://localhost:5000'
-      : '/';
+      : window.location.origin);
 
     this.socket = io(url, {
       transports: ['websocket', 'polling'],
