@@ -1,0 +1,233 @@
+.profilePage {
+  width: 100%;
+  min-height: 100vh;
+  background: #eeeeee;
+  padding: 0;
+}
+
+.profileContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.coverSection {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: visible;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.8);
+}
+
+.coverOverlay {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  padding: 0 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.profileImageWrap {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+}
+
+.topNav {
+  display: flex;
+  gap: 18px;
+  margin-left: 20px;
+  margin-bottom: 26px;
+  flex: 1;
+  justify-content: center;
+}
+
+.topNav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  transition: color 0.3s;
+}
+
+.topNav a:hover { color: #18b6ff; }
+
+.followersBox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.followersBox span { color: #fff; font-size: 10px; }
+
+.followersBox button {
+  border: none;
+  background: #11b4f5;
+  color: #fff;
+  font-size: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.followersBox button:hover { background: #0d9ddb; }
+
+.contentSection {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 28px;
+  padding: 18px 26px 30px;
+}
+
+.userHeader { margin-bottom: 12px; }
+.userHeader h2 { color: #1ca3e8; font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.userHeader p { color: #9a9a9a; font-size: 12px; }
+
+.infoBlock {
+  border-bottom: 1px solid #ebebeb;
+  padding: 14px 0;
+}
+
+.infoBlock h4 {
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionIconBlue { color: #1ca3e8; font-size: 11px; }
+
+.infoBlock p { font-size: 11px; color: #777; line-height: 1.8; }
+
+.experienceItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.expIcon {
+  width: 18px;
+  height: 18px;
+  border: 4px solid #83c441;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.experienceItem h5 { color: #1ca3e8; font-size: 11px; font-weight: 500; margin-bottom: 3px; }
+.experienceItem p { font-size: 11px; color: #777; }
+
+.mapBox {
+  margin-top: 10px;
+  width: 100%;
+  height: 125px;
+  background: #e5e5e5;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapError { text-align: center; padding: 10px; }
+
+.errorIcon {
+  width: 22px;
+  height: 22px;
+  background: #707070;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.mapError h3 { font-size: 13px; color: #444; margin-bottom: 8px; font-weight: 600; }
+.mapError p { font-size: 9px; color: #666; line-height: 1.5; max-width: 280px; margin: 0 auto; }
+
+.interestIcons {
+  display: flex;
+  gap: 12px;
+  color: #83c441;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.languageList { list-style: disc; padding-left: 18px; }
+.languageList li { font-size: 11px; color: #1ca3e8; margin-bottom: 5px; }
+
+.activitySidebar h4 { font-size: 12px; color: #666; font-weight: 500; margin-bottom: 18px; }
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.activityLine {
+  width: 2px;
+  min-height: 45px;
+  background: #83c441;
+  margin-top: 2px;
+}
+
+.activityText a {
+  display: block;
+  text-decoration: none;
+  color: #1ca3e8;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  transition: color 0.2s;
+}
+
+.activityText a:hover { color: #0d8bc5; }
+
+.activityText span { color: #8f8f8f; font-size: 10px; }
+
+@media (max-width: 768px) {
+  .contentSection { grid-template-columns: 1fr; }
+  .activitySidebar { margin-top: 10px; }
+  .coverSection { height: 220px; }
+  .coverOverlay { flex-direction: column; align-items: flex-start; gap: 15px; bottom: 10px; }
+  .topNav { margin: 0; justify-content: flex-start; flex-wrap: wrap; }
+  .followersBox { margin: 0; flex-wrap: wrap; }
+}
+
+@media (max-width: 480px) {
+  .profileContainer { max-width: 100%; }
+  .contentSection { padding: 20px 15px; }
+  .profileImageWrap { width: 85px; height: 85px; }
+  .userHeader h2 { font-size: 20px; }
+}
