@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
-  FaSearch, FaHeart, FaComment, FaHashtag, FaCompass,
-  FaCheckCircle, FaPlayCircle, FaClone
+  FaSearch, FaHeart, FaComment, FaCompass,
+  FaCheckCircle, FaClone
 } from "react-icons/fa";
 import styles from "../css/Explore.module.css";
 import { AuthContext } from "../Context/AuthContext";

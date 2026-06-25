@@ -23,7 +23,6 @@ export const useStoriesViewModel = () => {
   const [stories, setStories] = useState(mockStories);
   const [viewingIndex, setViewingIndex] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [loading, setLoading] = useState(false);
 
   const progressInterval = useRef(null);
   const storyTimeout = useRef(null);
@@ -161,7 +160,6 @@ export const useStoriesViewModel = () => {
     viewingStory,
     viewingIndex,
     progress,
-    loading,
     openStory,
     closeStory,
     nextStory,

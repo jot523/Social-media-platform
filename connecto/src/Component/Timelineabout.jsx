@@ -5,7 +5,7 @@ import { FaThumbsUp, FaCommentDots } from "react-icons/fa";
 import { getImageUrl } from "../services/utils/imageUtils";
 
 function Timelineabout() {
-  const { user, token } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {

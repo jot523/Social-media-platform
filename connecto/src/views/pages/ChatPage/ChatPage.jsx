@@ -48,7 +48,6 @@ const ChatPage = () => {
     toggleCamera,
     toggleScreenShare,
     switchCamera,
-    loading,
   } = useChatViewModel();
   const navigate = useNavigate();
 

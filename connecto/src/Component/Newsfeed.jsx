@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import {
   FaUserFriends, FaMapMarkerAlt, FaUsers, FaCommentDots,
-  FaImage, FaVideo, FaPencilAlt, FaCamera, FaMapMarkedAlt,
+  FaImage, FaVideo, FaCamera, FaMapMarkedAlt,
   FaThumbsUp, FaRegThumbsUp, FaShare, FaEllipsisH,
   FaPlayCircle, FaFire, FaBookmark, FaCheckCircle
 } from "react-icons/fa";

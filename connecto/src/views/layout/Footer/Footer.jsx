@@ -15,7 +15,7 @@ const Footer = () => (
       <p className={styles.footerCopy}>© 2026 Connecto. Made with 💜 by Amarjot Kaur</p>
       <div className={styles.footerLinks}>
         {['About', 'Privacy', 'Terms', 'Help'].map(link => (
-          <a key={link} href="#" className={styles.footerLink}>{link}</a>
+          <a key={link} href="#/" className={styles.footerLink}>{link}</a>
         ))}
       </div>
     </div>

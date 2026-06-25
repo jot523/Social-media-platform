@@ -72,7 +72,6 @@ export const useHomeViewModel = () => {
   });
 
   // UI state
-  const [likedPosts, setLikedPosts] = useState(new Set());
   const [savedPosts, setSavedPosts] = useState(new Set());
   const [followedUsers, setFollowedUsers] = useState(new Set());
   const [commentInputs, setCommentInputs] = useState({});
@@ -696,7 +695,6 @@ export const useHomeViewModel = () => {
     createPostState,
     
     // UI state
-    likedPosts,
     savedPosts,
     followedUsers,
     commentInputs,

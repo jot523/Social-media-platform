@@ -9,7 +9,7 @@ import { getImageUrl } from "../services/utils/imageUtils";
 function HashtagPage() {
   const { tag } = useParams();
   const navigate = useNavigate();
-  const { user, token } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
   
   const [posts, setPosts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -35,7 +35,7 @@ function HashtagPage() {
       }
     };
     fetchHashtagPosts();
-  }, [tag, activeTab]);
+  }, [tag, activeTab, token]);
 
   return (
     <div className={styles.hashtagPage}>

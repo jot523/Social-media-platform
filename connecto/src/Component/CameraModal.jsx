@@ -173,7 +173,7 @@ function CameraModal({ onClose }) {
         bodyData = { caption, mediaUrl: url, mediaType: capturedMedia.type };
       }
 
-      const res = await fetch(endpoint, {
+      await fetch(endpoint, {
         method: 'POST',
         headers: jsonHeaders(token),
         body: JSON.stringify(bodyData)
